@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Freelance Writer</title>
+  <link rel="icon" type="image/faiv icon.png" href="images/faiv icon.png">
+  <meta name="description" content="Learn more about our freelance writing services, our mission, and our passion for empowering brands through compelling content.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = { 
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0B132B',
+            pearl: '#FAFAFF',
+            sapphire: '#1C7293',
+            ice: '#9EB3C2',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    [dir="rtl"] { direction: rtl; }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeInUp 0.8s ease-out; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+  </style>
+</head>
+<body class="font-sans antialiased transition-colors duration-300 bg-pearl dark:bg-obsidian text-obsidian dark:text-pearl flex flex-col min-h-screen">
+
+  <nav class="bg-pearl/80 dark:bg-obsidian/80 backdrop-blur-lg fixed w-full top-0 z-50 shadow-sm border-b border-ice/30 dark:border-ice/10 transition-all duration-300">
+    <div class="max-w-[1400px] mx-auto nav-container px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+
+        <div class="flex-shrink-0">
+          <a href="index.html" class="flex items-center space-x-3">
+            <div class="flex flex-col">
+              <span class="text-2xl font-bold text-obsidian dark:text-pearl nav-logo-text">Freelance <span class="text-sapphire">Writer</span></span>
+            </div>
+          </a>
+        </div>
+
+        <div class="hidden xl:flex items-center justify-center flex-1 nav-menu-container mx-4">
+          <div class="flex items-center space-x-0.5 lg:space-x-2">
+
+            <div class="relative group">
+              <button class="nav-link text-obsidian dark:text-pearl hover:text-sapphire dark:hover:text-sapphire font-medium transition duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-ice/10 dark:hover:bg-ice/10">
+                <span class="text-sm">Home</span>
+                <i class="fas fa-chevron-down text-xs"></i>
+              </button>
+              <div class="absolute left-0 mt-2 w-48 bg-pearl dark:bg-obsidian border border-ice/30 dark:border-ice/20 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50 overflow-hidden">
+                <a href="index.html" class="block px-4 py-3 text-obsidian dark:text-pearl hover:bg-ice/10 dark:hover:bg-ice/10 hover:text-sapphire transition duration-300">Home Page 1</a>
+                <a href="home-2.html" class="block px-4 py-3 text-obsidian dark:text-pearl hover:bg-ice/10 dark:hover:bg-ice/10 hover:text-sapphire transition duration-300">Home Page 2</a>
+              </div>
+            </div>
+
+            <a href="about.html" class="nav-link text-sapphire font-medium transition duration-300 px-3 py-2 rounded-lg bg-ice/20 dark:bg-ice/10 text-sm">About</a>
+            <a href="services.html" class="nav-link text-obsidian dark:text-pearl hover:text-sapphire dark:hover:text-sapphire font-medium transition duration-300 px-3 py-2 rounded-lg hover:bg-ice/10 dark:hover:bg-ice/10 text-sm">Services</a>
+            <a href="portfolio.html" class="nav-link text-obsidian dark:text-pearl hover:text-sapphire dark:hover:text-sapphire font-medium transition duration-300 px-3 py-2 rounded-lg hover:bg-ice/10 dark:hover:bg-ice/10 text-sm">Portfolio</a>
+            <a href="pricing.html" class="nav-link text-obsidian dark:text-pearl hover:text-sapphire dark:hover:text-sapphire font-medium transition duration-300 px-3 py-2 rounded-lg hover:bg-ice/10 dark:hover:bg-ice/10 text-sm">Pricing</a>
+            <a href="blog.html" class="nav-link text-obsidian dark:text-pearl hover:text-sapphire dark:hover:text-sapphire font-medium transition duration-300 px-3 py-2 rounded-lg hover:bg-ice/10 dark:hover:bg-ice/10 text-sm">Blog</a>
+            <a href="contact.html" class="nav-link text-obsidian dark:text-pearl hover:text-sapphire dark:hover:text-sapphire font-medium transition duration-300 px-3 py-2 rounded-lg hover:bg-ice/10 dark:hover:bg-ice/10 text-sm">Contact</a>
+
+          </div>
+        </div>
+
+        <div class="hidden xl:flex items-center space-x-2">
+          <a href="login.html" class="nav-button text-obsidian dark:text-pearl hover:text-sapphire px-3 py-2 rounded-lg font-medium transition duration-300 text-sm flex items-center space-x-1">
+            <span>Login</span>
+          </a>
+          <a href="register.html" class="nav-button bg-sapphire hover:bg-[#155A75] text-pearl px-5 py-2.5 rounded-full font-medium transition duration-300 text-sm flex items-center space-x-2 shadow-md whitespace-nowrap">
+            <i class="fas fa-user-plus"></i>
+            <span>Register</span>
+          </a>
+
+          <button id="rtl-toggle" class="nav-icon-button w-10 h-10 rounded-full bg-ice/20 dark:bg-ice/10 hover:bg-ice/40 dark:hover:bg-ice/20 flex items-center justify-center text-obsidian dark:text-pearl transition duration-300 ml-2 text-xs font-semibold" title="Toggle RTL">
+            RTL
+          </button>
+
+          <button id="theme-toggle" class="nav-icon-button w-10 h-10 rounded-full bg-ice/20 dark:bg-ice/10 hover:bg-ice/40 dark:hover:bg-ice/20 flex items-center justify-center text-obsidian dark:text-pearl transition duration-300 ml-2" title="Toggle Theme">
+            <i class="fas fa-moon dark:hidden text-sm"></i>
+            <i class="fas fa-sun hidden dark:inline text-sm"></i>
+          </button>
+        </div>
+
+        <div class="xl:hidden flex items-center">
+          <button id="mobile-menu-button" class="text-obsidian dark:text-pearl hover:text-sapphire focus:outline-none p-3 rounded-lg hover:bg-ice/10 transition duration-300">
+            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden xl:hidden bg-pearl/95 dark:bg-obsidian/95 backdrop-blur-lg border-t border-ice/30 dark:border-ice/10 shadow-xl">
+      <div class="px-4 pt-2 pb-6 space-y-1 max-h-[calc(100vh-80px)] overflow-y-auto">
+        <div>
+          <button id="mobile-home-dropdown" class="w-full flex items-center justify-between px-4 py-3 text-obsidian dark:text-pearl hover:bg-ice/10 rounded-lg transition duration-300">
+            <span class="text-sm font-medium">Home</span>
+            <i class="fas fa-chevron-down text-xs transition-transform duration-300" id="mobile-home-icon"></i>
+          </button>
+          <div id="mobile-home-menu" class="hidden pl-4 mt-1 space-y-1">
+            <a href="index.html" class="block px-4 py-2 text-obsidian/80 dark:text-pearl/80 hover:bg-ice/10 hover:text-sapphire rounded-lg transition duration-300 text-sm">Home Page 1</a>
+            <a href="home-2.html" class="block px-4 py-2 text-obsidian/80 dark:text-pearl/80 hover:bg-ice/10 hover:text-sapphire rounded-lg transition duration-300 text-sm">Home Page 2</a>
+          </div>
+        </div>
+        <a href="about.html" class="block px-4 py-3 text-sapphire bg-ice/10 dark:bg-ice/10 rounded-lg transition duration-300 text-sm font-medium">About</a>
+        <a href="services.html" class="block px-4 py-3 text-obsidian dark:text-pearl hover:bg-ice/10 hover:text-sapphire rounded-lg transition duration-300 text-sm font-medium">Services</a>
+        <a href="portfolio.html" class="block px-4 py-3 text-obsidian dark:text-pearl hover:bg-ice/10 hover:text-sapphire rounded-lg transition duration-300 text-sm font-medium">Portfolio</a>
+        <a href="pricing.html" class="block px-4 py-3 text-obsidian dark:text-pearl hover:bg-ice/10 hover:text-sapphire rounded-lg transition duration-300 text-sm font-medium">Pricing</a>
+        <a href="blog.html" class="block px-4 py-3 text-obsidian dark:text-pearl hover:bg-ice/10 hover:text-sapphire rounded-lg transition duration-300 text-sm font-medium">Blog</a>
+        <a href="contact.html" class="block px-4 py-3 text-obsidian dark:text-pearl hover:bg-ice/10 hover:text-sapphire rounded-lg transition duration-300 text-sm font-medium">Contact</a>
+
+        <div class="pt-4 border-t border-ice/30 dark:border-ice/10 mt-3 space-y-3">
+          <div class="grid grid-cols-2 gap-3">
+            <a href="login.html" class="block w-full bg-ice/20 dark:bg-ice/10 hover:bg-ice/40 dark:hover:bg-ice/20 text-obsidian dark:text-pearl px-4 py-3 rounded-lg font-medium text-center transition duration-300 text-sm">Login</a>
+            <a href="register.html" class="block w-full bg-sapphire hover:bg-[#155A75] text-pearl px-4 py-3 rounded-lg font-medium text-center transition duration-300 shadow-md text-sm">Register</a>
+          </div>
+          <div class="grid grid-cols-2 gap-3 mt-2">
+            <button id="mobile-rtl-toggle" class="bg-ice/20 dark:bg-ice/10 hover:bg-ice/40 dark:hover:bg-ice/20 text-obsidian dark:text-pearl px-4 py-3 rounded-lg font-medium text-center transition duration-300 text-sm">
+              <i class="fas fa-language mr-2"></i>RTL
+            </button>
+            <button id="mobile-theme-toggle" class="bg-ice/20 dark:bg-ice/10 hover:bg-ice/40 dark:hover:bg-ice/20 text-obsidian dark:text-pearl px-4 py-3 rounded-lg font-medium text-center transition duration-300 text-sm">
+              <i class="fas fa-moon mr-2 dark:hidden"></i>
+              <i class="fas fa-sun mr-2 hidden dark:inline"></i>
+              <span>Theme</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow">
+    
+    <section class="min-h-screen flex flex-col justify-center text-pearl relative overflow-hidden pt-20 bg-[url('images/mobile-application-development-team-business-strategy-plan.jpg')] bg-cover bg-center bg-no-repeat">
+      
+      <div class="absolute inset-0 bg-obsidian/80"></div>
+
+      <div class="absolute top-1/4 right-10 w-96 h-96 bg-sapphire/20 rounded-full blur-3xl z-0"></div>
+      <div class="absolute bottom-10 left-10 w-80 h-80 bg-ice/10 rounded-full blur-3xl z-0"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center animate-fade-in">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 tracking-tight">
+          Behind The <span class="text-sapphire">Words</span>
+        </h1>
+        <p class="text-lg md:text-2xl text-ice max-w-3xl mx-auto leading-relaxed">
+          Discover the passion, methodology, and expertise behind our premium content services. We believe that great storytelling leads to ultimate brand authority.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-24 bg-pearl dark:bg-obsidian border-y border-ice/20 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="order-2 lg:order-1 space-y-8 animate-fade-in">
+            <div>
+              <span class="text-sapphire font-bold tracking-widest uppercase text-sm">The Backstory</span>
+              <h2 class="mt-4 text-4xl md:text-5xl font-extrabold text-obsidian dark:text-pearl leading-tight">
+                From Blank Pages to <span class="text-sapphire">Brand Authority.</span>
+              </h2>
+            </div>
+            <p class="text-lg text-obsidian/80 dark:text-pearl/80 leading-relaxed">
+              Every writer has an origin story. Mine didn't start in a boardroom; it started with a genuine fascination for how specific combinations of words could change a reader's perspective, evoke emotion, and drive action. 
+            </p>
+            <p class="text-lg text-obsidian/80 dark:text-pearl/80 leading-relaxed">
+              Over the past decade, I've transitioned from crafting editorial pieces for indie magazines to engineering high-converting sales funnels for global B2B tech companies. The medium changed, but the mission remained the same: to cut through the noise with clarity and purpose.
+            </p>
+            <div class="bg-ice/10 dark:bg-obsidian/50 p-6 rounded-2xl border-l-4 border-sapphire">
+              <p class="font-medium text-obsidian dark:text-pearl italic">
+                "Good writing makes the reader feel smart. Great copywriting makes the reader feel understood. That is the fundamental difference we bring to your brand."
+              </p>
+            </div>
+          </div>
+          <div class="order-1 lg:order-2 relative animate-fade-in">
+            <img 
+              src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              alt="Workspace of a freelance writer" 
+              class="relative rounded-[2rem] shadow-2xl border-4 border-pearl dark:border-obsidian object-cover w-full h-[450px]"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-ice/5 dark:bg-obsidian/90 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-sapphire font-bold tracking-widest uppercase text-sm">My Approach</span>
+          <h2 class="mt-4 text-4xl md:text-5xl font-extrabold text-obsidian dark:text-pearl">
+            The Content Methodology
+          </h2>
+          <p class="mt-6 text-lg text-obsidian/70 dark:text-ice">
+            Writing that converts isn't magic—it's architecture. Here is the structured framework I use to build every piece of content, ensuring maximum impact and ROI for your business.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 items-stretch">
+          
+          <div class="bg-pearl dark:bg-obsidian border border-ice/30 dark:border-ice/10 p-10 rounded-[2rem] hover:-translate-y-2 transition-transform duration-300 shadow-lg group relative overflow-hidden flex flex-col h-full">
+            <div class="w-16 h-16 bg-sapphire/10 rounded-2xl flex items-center justify-center mb-6 text-sapphire group-hover:bg-sapphire group-hover:text-pearl transition-colors duration-300">
+              <i class="fas fa-search-dollar text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-obsidian dark:text-pearl mb-4">1. The Deep Dive</h3>
+            <p class="text-obsidian/70 dark:text-ice mb-6 leading-relaxed flex-grow">
+              Before typing a single word, I immerse myself in your world. I analyze your target audience's pain points, study your competitors' weaknesses, and isolate your unique value proposition.
+            </p>
+            <ul class="space-y-2 text-sm text-obsidian/80 dark:text-pearl/80 font-medium mt-auto">
+              <li><i class="fas fa-check text-sapphire mr-2"></i> Audience Persona Mapping</li>
+              <li><i class="fas fa-check text-sapphire mr-2"></i> Competitor Content Gap Analysis</li>
+              <li><i class="fas fa-check text-sapphire mr-2"></i> Voice & Tone Alignment</li>
+            </ul>
+          </div>
+
+          <div class="bg-pearl dark:bg-obsidian border border-ice/30 dark:border-ice/10 p-10 rounded-[2rem] hover:-translate-y-2 transition-transform duration-300 shadow-lg group relative overflow-hidden flex flex-col h-full">
+            <div class="w-16 h-16 bg-sapphire/10 rounded-2xl flex items-center justify-center mb-6 text-sapphire group-hover:bg-sapphire group-hover:text-pearl transition-colors duration-300">
+              <i class="fas fa-layer-group text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-obsidian dark:text-pearl mb-4">2. Structural Drafting</h3>
+            <p class="text-obsidian/70 dark:text-ice mb-6 leading-relaxed flex-grow">
+              I build the wireframe of your content. This phase is about structuring the narrative flow, integrating SEO keywords naturally, and ensuring the logical progression leads the reader to a clear Call to Action.
+            </p>
+            <ul class="space-y-2 text-sm text-obsidian/80 dark:text-pearl/80 font-medium mt-auto">
+              <li><i class="fas fa-check text-sapphire mr-2"></i> Hierarchy & Header Structuring</li>
+              <li><i class="fas fa-check text-sapphire mr-2"></i> Semantic Keyword Integration</li>
+              <li><i class="fas fa-check text-sapphire mr-2"></i> Psychology-Driven Frameworks</li>
+            </ul>
+          </div>
+
+          <div class="bg-pearl dark:bg-obsidian border border-ice/30 dark:border-ice/10 p-10 rounded-[2rem] hover:-translate-y-2 transition-transform duration-300 shadow-lg group relative overflow-hidden flex flex-col h-full">
+            <div class="w-16 h-16 bg-sapphire/10 rounded-2xl flex items-center justify-center mb-6 text-sapphire group-hover:bg-sapphire group-hover:text-pearl transition-colors duration-300">
+              <i class="fas fa-cut text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-obsidian dark:text-pearl mb-4">3. The Ruthless Edit</h3>
+            <p class="text-obsidian/70 dark:text-ice mb-6 leading-relaxed flex-grow">
+              First drafts are for me; the final draft is for your customers. I ruthlessly edit the piece to cut fluff, tighten sentences, and ensure every word earns its place on the page.
+            </p>
+            <ul class="space-y-2 text-sm text-obsidian/80 dark:text-pearl/80 font-medium mt-auto">
+              <li><i class="fas fa-check text-sapphire mr-2"></i> Rhythm and Flow Optimization</li>
+              <li><i class="fas fa-check text-sapphire mr-2"></i> Clarity & Concision Checks</li>
+              <li><i class="fas fa-check text-sapphire mr-2"></i> Final Proofreading Polish</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-pearl dark:bg-obsidian border-b border-ice/20 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span class="text-sapphire font-bold tracking-widest uppercase text-sm">The Results</span>
+          <h2 class="mt-4 text-4xl md:text-5xl font-extrabold text-obsidian dark:text-pearl">
+            Don't Just Take My Word For It
+          </h2>
+          <p class="mt-4 text-lg text-obsidian/70 dark:text-ice">Real feedback from founders, marketers, and agencies I've partnered with.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+          
+          <div class="bg-white dark:bg-obsidian border border-ice/30 dark:border-ice/10 p-8 md:p-10 rounded-3xl shadow-lg relative flex flex-col h-full">
+            <div class="absolute top-8 right-8 text-4xl text-sapphire/10 dark:text-sapphire/20">
+              <i class="fas fa-quote-right"></i>
+            </div>
+            <div class="flex text-amber-500 text-sm mb-6">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="text-obsidian/80 dark:text-pearl/80 text-lg leading-relaxed mb-8 relative z-10 italic flex-grow">
+              "We hired them to completely rewrite our SaaS landing page. Not only did they perfectly capture our highly technical product in plain English, but our demo sign-up rate increased by 42% within the first month. Incredible talent and highly professional."
+            </p>
+            <div class="flex items-center gap-4 mt-auto">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David M." class="w-14 h-14 rounded-full border-2 border-sapphire object-cover">
+              <div>
+                <h4 class="font-bold text-obsidian dark:text-pearl text-base">David Mitchell</h4>
+                <p class="text-sm text-obsidian/60 dark:text-ice">CEO, CloudMatrix Solutions</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-obsidian border border-ice/30 dark:border-ice/10 p-8 md:p-10 rounded-3xl shadow-lg relative flex flex-col h-full">
+            <div class="absolute top-8 right-8 text-4xl text-sapphire/10 dark:text-sapphire/20">
+              <i class="fas fa-quote-right"></i>
+            </div>
+            <div class="flex text-amber-500 text-sm mb-6">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="text-obsidian/80 dark:text-pearl/80 text-lg leading-relaxed mb-8 relative z-10 italic flex-grow">
+              "Finding a freelance writer who actually understands SEO without making the content sound like a robot wrote it is nearly impossible. They deliver highly engaging, perfectly optimized blog content every single time. They are now an extension of our marketing team."
+            </p>
+            <div class="flex items-center gap-4 mt-auto">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah J." class="w-14 h-14 rounded-full border-2 border-sapphire object-cover">
+              <div>
+                <h4 class="font-bold text-obsidian dark:text-pearl text-base">Sarah Jenkins</h4>
+                <p class="text-sm text-obsidian/60 dark:text-ice">Director of Content, Elevate Media</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-obsidian text-pearl relative border-t border-sapphire/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-sapphire font-bold tracking-widest uppercase text-sm">The Arsenal</span>
+          <h2 class="mt-4 text-3xl md:text-5xl font-extrabold text-pearl">Tools & Tech Stack</h2>
+          <p class="mt-6 text-lg text-ice leading-relaxed">
+            I pair human creativity with industry-leading technology to ensure your content is grammatically flawless, highly original, and technically optimized to dominate search engines.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="bg-pearl/5 p-8 rounded-2xl border border-pearl/10 hover:bg-sapphire/20 transition-colors duration-300 text-center group flex flex-col h-full">
+            <i class="fas fa-chart-line text-4xl text-sapphire mb-4 group-hover:scale-110 transition-transform"></i>
+            <h3 class="text-xl font-bold mb-2">Ahrefs & SEMrush</h3>
+            <p class="text-ice text-sm leading-relaxed mt-auto">
+              For deep keyword research, competitor analysis, and identifying lucrative content gaps in your niche.
+            </p>
+          </div>
+
+          <div class="bg-pearl/5 p-8 rounded-2xl border border-pearl/10 hover:bg-sapphire/20 transition-colors duration-300 text-center group flex flex-col h-full">
+            <i class="fas fa-file-word text-4xl text-sapphire mb-4 group-hover:scale-110 transition-transform"></i>
+            <h3 class="text-xl font-bold mb-2">Surfer SEO</h3>
+            <p class="text-ice text-sm leading-relaxed mt-auto">
+              Utilized to map semantic keywords and ensure the on-page optimization beats the top 10 ranking competitors.
+            </p>
+          </div>
+
+          <div class="bg-pearl/5 p-8 rounded-2xl border border-pearl/10 hover:bg-sapphire/20 transition-colors duration-300 text-center group flex flex-col h-full">
+            <i class="fas fa-spell-check text-4xl text-sapphire mb-4 group-hover:scale-110 transition-transform"></i>
+            <h3 class="text-xl font-bold mb-2">Grammarly Pro</h3>
+            <p class="text-ice text-sm leading-relaxed mt-auto">
+              For advanced syntax checking, tone detection, and ensuring 100% error-free delivery on every draft.
+            </p>
+          </div>
+
+          <div class="bg-pearl/5 p-8 rounded-2xl border border-pearl/10 hover:bg-sapphire/20 transition-colors duration-300 text-center group flex flex-col h-full">
+            <i class="fas fa-shield-alt text-4xl text-sapphire mb-4 group-hover:scale-110 transition-transform"></i>
+            <h3 class="text-xl font-bold mb-2">Copyscape</h3>
+            <p class="text-ice text-sm leading-relaxed mt-auto">
+              Every piece is run through premium plagiarism checkers to guarantee absolute originality before it hits your inbox.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-pearl/50 dark:bg-obsidian/95 border-t border-ice/20 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-sapphire/10 rounded-full blur-3xl"></div>
+      
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="bg-white dark:bg-obsidian border border-ice/30 dark:border-ice/10 rounded-[3rem] p-10 md:p-16 shadow-2xl text-center">
+          <i class="fas fa-paper-plane text-5xl text-sapphire mb-6"></i>
+          <h2 class="text-3xl md:text-5xl font-extrabold text-obsidian dark:text-pearl mb-6">
+            Ready to upgrade your copy?
+          </h2>
+          <p class="text-lg text-obsidian/70 dark:text-ice max-w-2xl mx-auto mb-10 leading-relaxed">
+            Whether you need a single landing page rewritten, a monthly batch of SEO articles, or a full website copy overhaul, I'm currently accepting new clients for Q3. Let's discuss your project goals.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-sapphire hover:bg-[#155A75] text-pearl rounded-full font-bold transition-all duration-300 shadow-lg hover:shadow-sapphire/50 transform hover:-translate-y-1 text-lg">
+              Start a Project <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+            <a href="portfolio.html" class="inline-flex items-center justify-center px-8 py-4 bg-transparent text-obsidian dark:text-pearl border-2 border-ice/50 hover:border-sapphire hover:text-sapphire rounded-full font-bold transition-all duration-300 text-lg">
+              Browse Portfolio
+            </a>
+          </div>
+          <p class="text-sm text-obsidian/50 dark:text-ice/50 mt-6">Average response time: Under 24 hours.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-obsidian text-pearl pt-20 pb-10 mt-auto border-t-4 border-sapphire">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Freelance <span class="text-sapphire">Writer</span></h3>
+          <p class="text-ice mb-6 leading-relaxed">
+            Empowering you to look and sound your best through expert copywriting, content audits, and strategic storytelling.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 bg-pearl/10 hover:bg-sapphire rounded-full flex items-center justify-center transition-colors duration-300">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-pearl/10 hover:bg-sapphire rounded-full flex items-center justify-center transition-colors duration-300">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-pearl/10 hover:bg-sapphire rounded-full flex items-center justify-center transition-colors duration-300">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-pearl/10 hover:bg-sapphire rounded-full flex items-center justify-center transition-colors duration-300">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-bold mb-6 text-ice">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="text-ice hover:text-sapphire transition-colors duration-300">Home</a></li>
+            <li><a href="about.html" class="text-ice hover:text-sapphire transition-colors duration-300">About Us</a></li>
+            <li><a href="portfolio.html" class="text-ice hover:text-sapphire transition-colors duration-300">Our Portfolio</a></li>
+            <li><a href="pricing.html" class="text-ice hover:text-sapphire transition-colors duration-300">Pricing Plans</a></li>
+            <li><a href="blog.html" class="text-ice hover:text-sapphire transition-colors duration-300">Writer's Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-bold mb-6 text-ice">Our Services</h4>
+          <ul class="space-y-3">
+            <li><a href="services.html" class="text-ice hover:text-sapphire transition-colors duration-300">Copywriting</a></li>
+            <li><a href="services.html" class="text-ice hover:text-sapphire transition-colors duration-300">Content Strategy</a></li>
+            <li><a href="services.html" class="text-ice hover:text-sapphire transition-colors duration-300">SEO Articles</a></li>
+            <li><a href="services.html" class="text-ice hover:text-sapphire transition-colors duration-300">Email Marketing</a></li>
+            <li><a href="services.html" class="text-ice hover:text-sapphire transition-colors duration-300">Proofreading</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-bold mb-6 text-ice">Contact Us</h4>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt text-sapphire mt-1 mr-3"></i>
+              <span class="text-ice">123 Writing Street, Digital City, Remote</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-phone text-sapphire mr-3"></i>
+              <a href="tel:+919876543210" class="text-ice hover:text-sapphire transition-colors">+91 98765 43210</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-envelope text-sapphire mr-3"></i>
+              <a href="mailto:hello@freelancewriter.com" class="text-ice hover:text-sapphire transition-colors">hello@freelancewriter.com</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-clock text-sapphire mr-3"></i>
+              <span class="text-ice">Mon - Fri: 9AM - 5PM</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-ice/20 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-ice text-sm mb-4 md:mb-0">
+          © 2026 Freelance Writer. All rights reserved.
+        </p>
+        <div class="flex space-x-6">
+          <a href="login.html" class="text-ice hover:text-sapphire text-sm transition-colors duration-300">Client Login</a>
+          <a href="#" class="text-ice hover:text-sapphire text-sm transition-colors duration-300">Privacy Policy</a>
+          <a href="#" class="text-ice hover:text-sapphire text-sm transition-colors duration-300">Terms of Service</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+    const html = document.documentElement;
+
+    function toggleTheme() {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+    if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+    if (localStorage.getItem('theme') === 'dark') html.classList.add('dark');
+
+    // RTL Toggle
+    const rtlToggle = document.getElementById('rtl-toggle');
+    const mobileRtlToggle = document.getElementById('mobile-rtl-toggle');
+
+    function toggleRTL() {
+      if (html.getAttribute('dir') === 'rtl') {
+        html.removeAttribute('dir');
+        localStorage.setItem('direction', 'ltr');
+      } else {
+        html.setAttribute('dir', 'rtl');
+        localStorage.setItem('direction', 'rtl');
+      }
+    }
+
+    if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
+    if (mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
+    if (localStorage.getItem('direction') === 'rtl') html.setAttribute('dir', 'rtl');
+
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    // Mobile Dropdowns Toggle Function
+    function setupMobileDropdown(dropdownId, menuId, iconId) {
+      const dropdown = document.getElementById(dropdownId);
+      const menu = document.getElementById(menuId);
+      const icon = document.getElementById(iconId);
+      
+      if(dropdown && menu && icon) {
+        dropdown.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+          icon.style.transform = menu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        });
+      }
+    }
+
+    // Initialize dropdowns
+    setupMobileDropdown('mobile-home-dropdown', 'mobile-home-menu', 'mobile-home-icon');
+
+  </script>
+</body>
+</html>

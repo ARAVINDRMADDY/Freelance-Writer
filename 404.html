@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found - Freelance Writer</title>
+  <link rel="icon" type="image/faiv icon.png" href="images/faiv icon.png">
+  <meta name="description" content="The page you are looking for does not exist.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = { 
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0B132B',
+            pearl: '#FAFAFF',
+            sapphire: '#1C7293',
+            ice: '#9EB3C2',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    [dir="rtl"] { direction: rtl; }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeInUp 0.8s ease-out; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+  </style>
+</head>
+<body class="font-sans antialiased transition-colors duration-300 bg-pearl dark:bg-obsidian text-obsidian dark:text-pearl flex flex-col min-h-screen">
+
+
+
+  <main class="flex-grow flex items-center justify-center pt-20 relative overflow-hidden bg-gradient-to-br from-pearl via-pearl to-ice/20 dark:from-obsidian dark:via-obsidian dark:to-obsidian/90">
+    <div class="absolute top-20 left-10 w-72 h-72 bg-sapphire/10 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-ice/30 dark:bg-sapphire/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center animate-fade-in py-16">
+      
+      <div class="text-[150px] sm:text-[200px] font-extrabold text-sapphire leading-none animate-float drop-shadow-xl">
+        404
+      </div>
+      
+      <h1 class="text-3xl sm:text-5xl font-bold text-obsidian dark:text-pearl mt-6 mb-4">
+        Looks like this page got lost in the drafts.
+      </h1>
+      
+      <p class="text-lg text-obsidian/70 dark:text-ice mb-10 max-w-xl mx-auto">
+        We couldn't find the words you were looking for. The page might have been removed, had its name changed, or is temporarily unavailable.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="index.html" class="inline-flex items-center justify-center px-8 py-4 bg-sapphire hover:bg-[#155A75] text-pearl rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-sapphire/50 transform hover:-translate-y-1">
+          <i class="fas fa-home mr-2"></i> Back to Homepage
+        </a>
+        <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-sapphire/30 dark:border-ice/30 text-obsidian dark:text-pearl hover:bg-ice/10 dark:hover:bg-ice/10 rounded-full font-semibold transition-all duration-300 transform hover:-translate-y-1">
+          Contact Support
+        </a>
+      </div>
+      
+    </div>
+  </main>
+
+  
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+    const html = document.documentElement;
+
+    function toggleTheme() {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+    if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+    if (localStorage.getItem('theme') === 'dark') html.classList.add('dark');
+
+    // RTL Toggle
+    const rtlToggle = document.getElementById('rtl-toggle');
+    const mobileRtlToggle = document.getElementById('mobile-rtl-toggle');
+
+    function toggleRTL() {
+      if (html.getAttribute('dir') === 'rtl') {
+        html.removeAttribute('dir');
+        localStorage.setItem('direction', 'ltr');
+      } else {
+        html.setAttribute('dir', 'rtl');
+        localStorage.setItem('direction', 'rtl');
+      }
+    }
+
+    if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
+    if (mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
+    if (localStorage.getItem('direction') === 'rtl') html.setAttribute('dir', 'rtl');
+
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    // Mobile Dropdowns Toggle Function
+    function setupMobileDropdown(dropdownId, menuId, iconId) {
+      const dropdown = document.getElementById(dropdownId);
+      const menu = document.getElementById(menuId);
+      const icon = document.getElementById(iconId);
+      
+      if(dropdown && menu && icon) {
+        dropdown.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+          icon.style.transform = menu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        });
+      }
+    }
+
+    // Initialize dropdowns
+    setupMobileDropdown('mobile-home-dropdown', 'mobile-home-menu', 'mobile-home-icon');
+
+  </script>
+</body>
+</html>
