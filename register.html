@@ -60,7 +60,7 @@
         <div class="flex-shrink-0">
           <a href="index.html" class="flex items-center space-x-3">
             <div class="flex flex-col">
-              <span class="text-2xl font-bold text-obsidian dark:text-pearl nav-logo-text">Freelance <span class="text-sapphire">Writer</span></span>
+              <span class="text-2xl font-semibold text-obsidian dark:text-pearl nav-logo-text">Freelance <span class="text-sapphire">Writer</span></span>
             </div>
           </a>
         </div>
@@ -90,7 +90,7 @@
       <div class="bg-pearl dark:bg-obsidian/95 rounded-3xl shadow-2xl p-4 border border-ice/30 dark:border-ice/10 animate-fade-in relative z-10">
 
         <div class="text-center mb-3">
-          <h2 class="text-2xl font-bold text-obsidian dark:text-pearl mb-1">Create Account</h2>
+          <h2 class="text-2xl font-semibold text-obsidian dark:text-pearl mb-1">Create Account</h2>
           <p class="text-sm text-obsidian/70 dark:text-ice">Join us and start your journey</p>
         </div>
 
@@ -151,7 +151,7 @@
 
           <button 
             type="submit"
-            class="w-full py-2 mt-2 bg-sapphire hover:bg-[#155A75] text-pearl font-bold rounded-xl shadow-lg hover:shadow-sapphire/50 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center"
+            class="w-full py-2 mt-2 bg-sapphire hover:bg-[#155A75] text-pearl font-semibold rounded-xl shadow-lg hover:shadow-sapphire/50 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center"
           >
             <i class="fas fa-user-plus ltr:mr-2 rtl:ml-2"></i> <span>Create Account</span>
           </button>
@@ -198,7 +198,7 @@
 
         <div class="mt-4 text-center text-sm text-obsidian/70 dark:text-ice">
           Already have an account? 
-          <a href="login.html" class="text-sapphire font-bold hover:underline transition-colors ltr:ml-1 rtl:mr-1">Sign In Here</a>
+          <a href="login.html" class="text-sapphire font-semibold hover:underline transition-colors ltr:ml-1 rtl:mr-1">Sign In Here</a>
         </div>
 
       </div>
@@ -241,6 +241,7 @@
     }
 
     if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+    if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
     if (localStorage.getItem('theme') === 'dark') html.classList.add('dark');
 
     // RTL Toggle Function
